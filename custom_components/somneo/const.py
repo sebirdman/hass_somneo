@@ -22,8 +22,7 @@ PLATFORMS = [BINARY_SENSOR, SENSOR, SWITCH]
 
 # Configuration and options
 CONF_ENABLED = "enabled"
-CONF_USERNAME = "username"
-CONF_PASSWORD = "password"
+CONF_IP = "ip"
 
 # Defaults
 DEFAULT_NAME = DOMAIN

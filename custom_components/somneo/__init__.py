@@ -17,8 +17,7 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, Upda
 from .api import IntegrationBlueprintApiClient
 
 from .const import (
-    CONF_PASSWORD,
-    CONF_USERNAME,
+    CONF_IP,
     DOMAIN,
     PLATFORMS,
     STARTUP_MESSAGE,
@@ -40,8 +39,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         hass.data.setdefault(DOMAIN, {})
         _LOGGER.info(STARTUP_MESSAGE)
 
-    username = entry.data.get(CONF_USERNAME)
-    password = entry.data.get(CONF_PASSWORD)
+    ip = entry.data.get(CONF_IP)
 
     session = async_get_clientsession(hass)
     client = IntegrationBlueprintApiClient(username, password, session)
